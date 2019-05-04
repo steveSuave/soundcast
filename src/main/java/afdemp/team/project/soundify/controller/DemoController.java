@@ -9,8 +9,22 @@ public class DemoController {
 	@GetMapping("/")
 	public String showHome() {
 		
-		return "home";
+		return "indexS";
 	}
+	
+	@GetMapping("/registerS")
+	public String showRegister() {
+		
+		return "registerS";
+	}
+	
+	// add request mapping for /employees
+
+	@GetMapping("/employees")
+	public String showEmployees() {
+		
+		return "leaders";
+	}	
 	
 	// add request mapping for /leaders
 
