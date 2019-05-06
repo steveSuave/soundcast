@@ -1,2 +1,3 @@
 # soundcast
-Spring-Hibernate Team Project
+
+Afdemp's Coding Bootcamp final project
