@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>afdemp</groupId>
-	<artifactId>team-project-soundify</artifactId>
+	<artifactId>team-project-soundcast</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>soundify</name>
+	<name>soundcast</name>
 
 	<properties>
 		<springframework.version>5.0.5.RELEASE</springframework.version>
