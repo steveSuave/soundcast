@@ -5,53 +5,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Log in | Sign Up</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Log in | Sign Up</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/loginform.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/static/css/loginform.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="login is-active">
-            <div class="profile"><i class="fa fa-camera fa-2x"></i></div>
-            <div class="form-element">
-                <span><i class="fa fa-envelope"></i></span><input type="email" placeholder="Your Email Address" />
-            </div>
-            <div class="form-element">
-                <span><i class="fa fa-lock"></i></span><input type="password" placeholder=" Password" />
-            </div>
-            <button class="btn-login">login</button>
-        </div>
+	<div class="wrapper">
 
-        <div class="register down">
-            <div class="form-element">
-                <span><i class="fa fa-user"></i></span><input type="text" placeholder="Full Name" />
-            </div>
-            <div class="form-element">
-                <span><i class="fa fa-envelope"></i></span><input type="email" placeholder="Your Email Address" />
-            </div>
-            <div class="form-element">
-                <span><i class="fa fa-lock"></i></span><input type="password" placeholder="Password" />
-            </div>
-            <div class="form-element">
-                <span><i class="fa fa-lock"></i></span><input type="password" placeholder="Re-Enter Password" />
-            </div>
-            <button class="btn-register">register</button>
-        </div>
+		<!-- Login Form -->
+		<form action="${pageContext.request.contextPath}/authenticateTheUser"
+			method="POST" class="form-horizontal">
 
-        <div class="login-view-toggle">
-            <div class="sign-up-toggle is-active">Don't have an account? <a href="#">Sign Up</a></div>
-            <div class="login-toggle">Already have an account? <a href="#">Login</a></div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="${pageContext.request.contextPath}/static/js/loginform.js"></script>
+			<!-- Place for messages: error, alert etc ... -->
+			<div class="form-group">
+				<div class="col-xs-15">
+					<div>
+
+						<!-- Check for login error -->
+
+						<c:if test="${param.error != null}">
+
+							<div class="alert alert-danger col-xs-offset-1 col-xs-10">
+								Invalid username and password.</div>
+
+						</c:if>
+
+						<!-- Check for logout -->
+
+						<c:if test="${param.logout != null}">
+
+							<div class="alert alert-success col-xs-offset-1 col-xs-10">
+								You have been logged out.</div>
+
+						</c:if>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="login is-active">
+				<div class="profile">
+					<i class="fa fa-camera fa-2x"></i>
+				</div>
+				<div class="form-element">
+					<span><i class="fa fa-envelope"></i></span><input type="text"
+						name="username" placeholder="Your Username" />
+				</div>
+				<div class="form-element">
+					<span><i class="fa fa-lock"></i></span><input type="password"
+						name="password" placeholder=" Password" />
+				</div>
+				<button class="btn-login">login</button>
+			</div>
+
+			<!-- manually adding tokens  -->
+
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+		</form>
+
+
+		<div class="login-view-toggle">
+			<div class="sign-up-toggle is-active">
+				Don't have an account? <a href="${pageContext.request.contextPath}/register/showRegistrationForm">Sign Up</a>
+			</div>
+
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="${pageContext.request.contextPath}/static/js/loginform.js"></script>
 </body>
 
 </html>
