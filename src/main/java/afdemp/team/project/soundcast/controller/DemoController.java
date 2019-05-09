@@ -23,7 +23,7 @@ public class DemoController {
 	@GetMapping("/employees")
 	public String showEmployees() {
 		
-		return "leaders";
+		return "indexS";
 	}	
 	
 	// add request mapping for /leaders

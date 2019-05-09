@@ -1,7 +1,7 @@
-DROP DATABASE  IF EXISTS `spring_security_custom_user_demo`;
+DROP DATABASE  IF EXISTS `team-project-soundcast`;
 
-CREATE DATABASE  IF NOT EXISTS `spring_security_custom_user_demo`;
-USE `spring_security_custom_user_demo`;
+CREATE DATABASE  IF NOT EXISTS `team-project-soundcast`;
+USE `team-project-soundcast`;
 
 --
 -- Table structure for table `user`
@@ -24,16 +24,16 @@ CREATE TABLE `user` (
 --
 -- NOTE: The passwords are encrypted using BCrypt
 --
--- A generation tool is avail at: http://www.luv2code.com/generate-bcrypt-password
+-- A generation tool is avail at: https://www.dailycred.com/article/bcrypt-calculator
 --
 -- Default passwords here are: fun123
 --
 
 INSERT INTO `user` (username,password,first_name,last_name,email)
 VALUES 
-('john','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','John','Doe','john@luv2code.com'),
-('mary','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','Mary','Public','mary@luv2code.com'),
-('susan','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','Susan','Adams','susan@luv2code.com');
+('john','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','John','Doe','john@soundcast.com'),
+('mary','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','Mary','Doe','mary@soundcast.com'),
+('scoobie','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','Scoobie','Doe','scoobie@soundcast.com');
 
 
 --
